@@ -1,13 +1,15 @@
 package tramite;
 
+import singleton.Impresora;
+
 public abstract class Tramite_RRHH {
 
 	public final void tramitar() {
-		pagoNomina();
-		pagoPension();
-		pagoSalud();
-		pagoBonos();
-		envioReciboNomina();
+		Impresora.getInstance().imprimir("Nomina: "+pagoNomina());
+		Impresora.getInstance().imprimir("Pension: "+pagoPension());
+		Impresora.getInstance().imprimir("Salud: "+pagoSalud());
+		Impresora.getInstance().imprimir("Bonos: "+pagoBonos());
+		Impresora.getInstance().imprimir(envioReciboNomina());
 	}
 
 	public abstract int pagoNomina();
